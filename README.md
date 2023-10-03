@@ -12,8 +12,8 @@ Características:
 -El manejo del puerto se delega a los servidores web.
 -Se usaron 7 archivos para maximizar la velocidad de carga de un nuevo microservicio, colocando los requerimientos minimos.
 
-</pre>
 # Uso
+
 Ejemplos de uso del API
 <pre>
  <p style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;"> 
