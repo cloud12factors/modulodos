@@ -37,7 +37,7 @@ curl -X PUT http://127.0.0.1/perrorrazas/request.php -H 'Content-Type: applicati
 curl -X DELETE http://127.0.0.1/perrorrazas/request.php -H 'Content-Type: application/json' -d '{"id":"7"}'
 
 
-#configuración de la base
+# configuración de la base
 
 //conexion
 root@localhost ~]# mysql -u root -p
