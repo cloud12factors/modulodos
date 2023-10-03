@@ -40,14 +40,24 @@ curl -X DELETE http://127.0.0.1/perrorrazas/request.php -H 'Content-Type: applic
 # configuración de la base
 
 //conexion
+
 root@localhost ~]# mysql -u root -p
+
 mysql> use mysql;
+
 mysql> create database perrorraza;
+
 mysql> create user perrorraza@127.0.0.1;
+
 mysql>  alter user perrorraza@127.0.0.1 identified  by 'lacontra';
+
 mysql> grant all privileges on perrorraza.* to perrorraza@127.0.0.1 ;
+
 mysql> exit
 
+
 -carga del script de la tabla
+
 [root@localhost ~]# mysql -u perrorraza -p -h 127.0.0.1 perrorraza   < perrorraza.sql
+
 
