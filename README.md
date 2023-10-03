@@ -1,6 +1,6 @@
 # modulodos
 proyecto en PHP de microservicios
-El siguiente proyecto tiene como finalidad ejemplificar el API rest en PHP para manejar razas de perros en microservicios, se muestran los fundamentos de los llamados PUT,GET,POST,DELETE enviando y recibiendo peticiones en JSon.
+El siguiente proyecto tiene como finalidad ejemplificar el API rest en PHP para manejar razas de perros en microservicios, se muestran los fundamentos de los llamados PUT,GET,POST,DELETE enviando y recibiendo peticiones en JSon, para este ejemplo hace las operaciones de agregar la raza de un perro, actualizarlo,borrarlo,consultar uno perro por id o todos los que tiene la colección o tabla.
 
 Algunas características son:
 En terminos generales el sistema usa mysql, servidor apache, rocky linux 9, php_pdo (para facilitar el cambio de manejador de base de datos)
@@ -112,6 +112,7 @@ systemctl restart  httpd
 
 -ruta del código/ directorio public,public_html/html , por default html
 /var/www/html
+
 -el api debe quedar alojada bajo el directorio html antes mencionado
 /var/www/html/perrorrazas
 
