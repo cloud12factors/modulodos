@@ -61,3 +61,26 @@ mysql> exit
 [root@localhost ~]# mysql -u perrorraza -p -h 127.0.0.1 perrorraza   < perrorraza.sql
 
 
+# Confiracion variables de ambiente y puerto
+
+agregar en el archivo /etc/httpd/httpd.conf las variables de ambiente, para que no se escriban en código de la aplicación y sea portable
+
+SetEnv SERVERIPNAME 127.0.0.1
+
+SetEnv USERNAME elusuariobase
+
+SetEnv PASSWORD lacontraseña
+
+SetEnv DATABASE labasededatos
+
+Listen 9090
+
+reiniciar
+
+systemctl restart  httpd
+
+
+
+
+
+
