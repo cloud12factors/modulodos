@@ -13,33 +13,53 @@ Ejemplos de uso del API
 
 //Agregar
 
-curl -X POST http://127.0.0.1/perrorrazas/request.php -H 'Content-Type: application/json' -d '{"raza":"changoleon"}'
+curl -X POST http://127.0.0.1:9090/perrorrazas/request.php -H 'Content-Type: application/json' -d '{"raza":"changoleon"}'
 
-curl -X POST http://127.0.0.1/perrorrazas/request.php -H 'Content-Type: application/json' -d '{"raza":"patoloro"}'
+curl -X POST http://127.0.0.1:9090/perrorrazas/request.php -H 'Content-Type: application/json' -d '{"raza":"patoloro"}'
 
-curl -X POST http://127.0.0.1/perrorrazas/request.php -H 'Content-Type: application/json' -d '{"raza":"osoperro"}'
+curl -X POST http://127.0.0.1:9090/perrorrazas/request.php -H 'Content-Type: application/json' -d '{"raza":"osoperro"}'
 
 
 //Consultar uno
 
-curl -X GET http://127.0.0.1/perrorrazas/request.php -H 'Content-Type: application/json' -d '{"id":"7"}'
+curl -X GET http://127.0.0.1:9090/perrorrazas/request.php -H 'Content-Type: application/json' -d '{"id":"7"}'
 
 
 //Consultar todos
 
-curl -X GET http://127.0.0.1/perrorrazas/request.php
+curl -X GET http://127.0.0.1:9090/perrorrazas/request.php
 
 
 //Actualizar
-curl -X PUT http://127.0.0.1/perrorrazas/request.php -H 'Content-Type: application/json' -d '{"id":"7","raza":"osocerdo"}'
+curl -X PUT http://127.0.0.1:9090/perrorrazas/request.php -H 'Content-Type: application/json' -d '{"id":"7","raza":"osocerdo"}'
 
 //Borrar
-curl -X DELETE http://127.0.0.1/perrorrazas/request.php -H 'Content-Type: application/json' -d '{"id":"7"}'
+curl -X DELETE http://127.0.0.1:9090/perrorrazas/request.php -H 'Content-Type: application/json' -d '{"id":"7"}'
+
+
+# instalación del ambiente
+dnf install httpd -y
+systemctl enable httpd
+dnf install epel-release
+
+dnf install http://rpms.remirepo.net/enterprise/remi-release-9.rpm
+
+dnf install dnf-utils
+dnf module reset php
+dnf module install php:remi-8.2
+dnf install  php php-mcrypt php-mysql php-pgsql php-pdo_pgsql php-cli php-ssh2 php-openssl php-json  php-bcmath php-ctype php-fileinfo php-mbstring php-pdo php-tokenizer php-xml php-dom php-devel php-pear php-gd.x86_64 php-soap php-zip php-intl php-opcache php-devel php-pear
+
+dnf install mysql-server
+systemctl start mysqld.service
+systemctl enable mysqld
+mysql_secure_installation
+-conectarse a la base
+mysqladmin -u root -p 
 
 
 # configuración de la base
 
-//conexion
+//conexión
 
 root@localhost ~]# mysql -u root -p
 
@@ -55,13 +75,14 @@ mysql> grant all privileges on perrorraza.* to perrorraza@127.0.0.1 ;
 
 mysql> exit
 
-
 -carga del script de la tabla
 
 [root@localhost ~]# mysql -u perrorraza -p -h 127.0.0.1 perrorraza   < perrorraza.sql
 
 
-# Confirguración de variables de ambiente y puerto
+
+
+# Configuración de variables de ambiente y puerto
 
 agregar en el archivo /etc/httpd/httpd.conf las variables de ambiente, para que no se escriban en código de la aplicación y sea portable
 
@@ -79,6 +100,13 @@ reiniciar
 
 systemctl restart  httpd
 
+-ruta del código/ directorio public,public_html/html , por default html
+/var/www/html
+-el api debe quedar alojada bajo el directorio html antes mencionado
+/var/www/html/perrorrazas
+
+La URL de acceso queda en el puerto 9090 en caso de cambiar el puerto, por default es el 80:
+http://127.0.0.1:9090/perrorrazas/request.php
 
 
 
