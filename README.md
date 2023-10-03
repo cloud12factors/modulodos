@@ -45,15 +45,23 @@ dnf install epel-release
 dnf install http://rpms.remirepo.net/enterprise/remi-release-9.rpm
 
 dnf install dnf-utils
+
 dnf module reset php
+
 dnf module install php:remi-8.2
+
 dnf install  php php-mcrypt php-mysql php-pgsql php-pdo_pgsql php-cli php-ssh2 php-openssl php-json  php-bcmath php-ctype php-fileinfo php-mbstring php-pdo php-tokenizer php-xml php-dom php-devel php-pear php-gd.x86_64 php-soap php-zip php-intl php-opcache php-devel php-pear
 
 dnf install mysql-server
+
 systemctl start mysqld.service
+
 systemctl enable mysqld
+
 mysql_secure_installation
+
 -conectarse a la base
+
 mysqladmin -u root -p 
 
 
