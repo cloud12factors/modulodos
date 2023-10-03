@@ -7,3 +7,5 @@ En terminos generales el sistema usa mysql, servidor apache, rocky linux 9, php_
 Para facilitar el uso entre servidores, la aplicación carga los datos de conexión de las variables de ambiente
 El manejo del puerto se delega a los servidores web.
 Se usaron 7 archivos para maximizar la velocidad de carga de un nuevo microservicio, colocando los requerimientos minimos.
+
+# uso
