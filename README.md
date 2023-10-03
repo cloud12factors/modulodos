@@ -10,6 +10,7 @@ Se usaron 7 archivos para maximizar la velocidad de carga de un nuevo microservi
 
 # uso
 Ejemplos de uso del API
+<div>
  <p style="font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;"> 
 //Agregar
 
@@ -36,6 +37,7 @@ curl -X PUT http://127.0.0.1:9090/perrorrazas/request.php -H 'Content-Type: appl
 //Borrar
 curl -X DELETE http://127.0.0.1:9090/perrorrazas/request.php -H 'Content-Type: application/json' -d '{"id":"7"}'
 </p>
+</div>
 
 # instalación del ambiente
 dnf install httpd -y
