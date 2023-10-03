@@ -11,14 +11,17 @@ Se usaron 7 archivos para maximizar la velocidad de carga de un nuevo microservi
 # uso
 Ejemplos de uso del API
 //Agregar
+
 curl -X POST http://127.0.0.1/perrorrazas/request.php -H 'Content-Type: application/json' -d '{"raza":"changoleon"}'
 curl -X POST http://127.0.0.1/perrorrazas/request.php -H 'Content-Type: application/json' -d '{"raza":"patoloro"}'
 curl -X POST http://127.0.0.1/perrorrazas/request.php -H 'Content-Type: application/json' -d '{"raza":"osoperro"}'
 
 //Consultar uno
+
 curl -X GET http://127.0.0.1/perrorrazas/request.php -H 'Content-Type: application/json' -d '{"id":"7"}'
 
 //Consultar todos
+
 curl -X GET http://127.0.0.1/perrorrazas/request.php
 
 //Actualizar
