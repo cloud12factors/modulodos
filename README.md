@@ -47,8 +47,11 @@ curl -X DELETE http://127.0.0.1:9090/perrorrazas/request.php -H 'Content-Type: a
 </pre>
 
 # Instalación del ambiente
+
 dnf install httpd -y
+
 systemctl enable httpd
+
 dnf install epel-release
 
 dnf install http://rpms.remirepo.net/enterprise/remi-release-9.rpm
