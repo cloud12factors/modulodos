@@ -9,8 +9,16 @@ El manejo del puerto se delega a los servidores web.
 Se usaron 7 archivos para maximizar la velocidad de carga de un nuevo microservicio, colocando los requerimientos minimos.
 
 # uso
+        <style>
+            .eltexto
+            {
+                font-family:    Arial, Helvetica, sans-serif;
+                font-size:      40px;
+                font-weight:    bold;
+            }
+        </style>
 Ejemplos de uso del API
- <p style="font-size:6px"> 
+ <div class="eltexto"> 
 //Agregar
 
 curl -X POST http://127.0.0.1:9090/perrorrazas/request.php -H 'Content-Type: application/json' -d '{"raza":"changoleon"}'
@@ -35,7 +43,7 @@ curl -X PUT http://127.0.0.1:9090/perrorrazas/request.php -H 'Content-Type: appl
 
 //Borrar
 curl -X DELETE http://127.0.0.1:9090/perrorrazas/request.php -H 'Content-Type: application/json' -d '{"id":"7"}'
-</p>
+</d>
 
 # instalación del ambiente
 dnf install httpd -y
